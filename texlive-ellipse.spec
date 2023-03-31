@@ -1,6 +1,6 @@
 Name:		texlive-ellipse
 Version:	39025
-Release:	1
+Release:	2
 Summary:	Draw ellipses and elliptical arcs using the standard LaTeX2e picture environment
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ellipse
