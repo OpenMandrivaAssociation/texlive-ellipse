@@ -3,7 +3,7 @@ Version:	39025
 Release:	2
 Summary:	Draw ellipses and elliptical arcs using the standard LaTeX2e picture environment
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ellipse
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/ellipse
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ellipse.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ellipse.doc.r%{version}.tar.xz
