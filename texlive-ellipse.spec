@@ -1,39 +1,24 @@
-Name:		texlive-ellipse
-Version:	39025
-Release:	2
+%global tl_name ellipse
+%global tl_revision 39025
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.0
+Release:	%{tl_revision}.1
 Summary:	Draw ellipses and elliptical arcs using the standard LaTeX2e picture environment
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/ellipse
+URL:		https://www.ctan.org/tex-archive/graphics/ellipse
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ellipse.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ellipse.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ellipse.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ellipse.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ellipse.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ellipse.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Draw ellipses and elliptical arcs using the standard LaTeX2e
-picture environment.
+Draw ellipses and elliptical arcs using the standard LaTeX2e picture
+environment.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/ellipse
-%{_texmfdistdir}/tex/latex/ellipse
-%doc %{_texmfdistdir}/doc/latex/ellipse
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
